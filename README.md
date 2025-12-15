@@ -1,43 +1,69 @@
-# Monopoly Game - Character System
+# Monopoly Game (Java OOP)
 
-This is an enhanced version of the Monopoly game with a character system. Players can choose their game tokens (characters) when starting a new game.
+A robust and interactive implementation of the classic board game **Monopoly**, built using **Java** and **Swing** GUI. This project demonstrates Object-Oriented Programming (OOP) principles, custom UI components, and game state management.
 
-## Character Images
+## 🎮 Features
 
-The game looks for character images in the `images/` directory. You need to add the following image files:
+- **Interactive Game Board**: A visual representation of the standard Monopoly board with custom rendering.
+- **Multiplayer Support**: Supports 2 to 4 players with character selection.
+- **Game Mechanics**:
+  - Roll dice with animations.
+  - Buy properties, utilities, and railroads.
+  - Pay rent and handle bankruptcy.
+  - Draw **Chance** and **Community Chest** cards.
+  - **Jail** mechanics (Go to Jail, Get out of Jail).
+  - **Mortgage** system for properties.
+  - **House/Hotel Development**: Build houses to increase rent.
+- **Rich UI**:
+  - Player information panels showing balance and assets.
+  - popup notifications for game events.
+  - Custom settings for game display.
+  - Bilingual support (Vietnamese/English interface elements).
 
-- `images/car.png`
-- `images/dog.png`
-- `images/hat.png`
-- `images/ship.png`
-- `images/iron.png`
-- `images/boot.png`
-- `images/thimble.png`
-- `images/wheelbarrow.png`
+## 🛠️ Requirements
 
-Each image should be a square PNG file representing the Monopoly token. If you don't have these images, you can:
+- **Java Development Kit (JDK)**: Version 8 or higher.
+- **IDE**: IntelliJ IDEA, Eclipse, or NetBeans (Recommended for running and editing).
 
-1. Create your own character token images (50x50 pixels or larger is recommended)
-2. Find free token images online (make sure they're properly licensed)
-3. Use placeholder images for testing
+## 🚀 How to Run
 
-## Adding Custom Characters
+1.  **Clone the repository**:
 
-If you want to add more characters beyond the default ones:
+    ```bash
+    git clone https://github.com/Duy133009/Monopoly.git
+    cd Monopoly/Monopoly
+    ```
 
-1. Add your character image to the `images/` directory
-2. Edit the `CharacterManager.java` file to include your new character:
+2.  **Compile the source code**:
 
-```java
-// In CharacterManager.java constructor
-availableCharacters.add(new Character("YourNewToken", "images/yourtoken.png"));
-```
+    ```bash
+    javac Main.java
+    ```
 
-## How It Works
+3.  **Run the application**:
+    ```bash
+    java Main
+    ```
 
-When starting a new game:
-1. You'll be prompted to select the number of players
-2. For each player, you'll enter a name and select a character
-3. Characters are displayed throughout gameplay to represent each player
+## 📂 Project Structure
 
-Enjoy your enhanced Monopoly game! 
+- `Main.java`: The entry point of the application.
+- `GameEngine.java`: Core logic handling turns, rules, and state.
+- `GameBoardPanel.java`: Renders the game board.
+- `Player.java`: Represents a player entity.
+- `DicePanel.java`: Handles dice rolling logic and animation.
+- `images/`: Directory containing game assets (tokens, board icons, etc.).
+
+## 🧩 Technologies Used
+
+- **Language**: Java
+- **GUI Framework**: Swing / AWT
+- **Concepts**: OOP (Encapsulation, Inheritance, Polymorphism), Event-Driven Programming, custom graphical rendering.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request for any features or bug fixes.
+
+---
+
+**Author**: [Duy133009](https://github.com/Duy133009)
