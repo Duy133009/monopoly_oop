@@ -780,11 +780,21 @@ public class GameUtils {
         }
         
         // First try loading from class resources
-        ImageIcon icon = new ImageIcon(GameUtils.class.getResource("/" + path));
+        ImageIcon icon = null;
+        java.net.URL resourceUrl = GameUtils.class.getResource("/" + path);
+        if (resourceUrl != null) {
+            icon = new ImageIcon(resourceUrl);
+        }
         
         // If that didn't work, try direct file path
-        if (icon.getIconWidth() <= 0) {
-            icon = new ImageIcon(path);
+        if (icon == null || icon.getIconWidth() <= 0) {
+            File file = new File(path);
+            if (file.exists()) {
+                icon = new ImageIcon(path);
+            } else {
+                // Create an empty icon as fallback
+                icon = new ImageIcon(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB));
+            }
         }
         
         // Special handling for images that need transparent background
